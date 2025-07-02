@@ -1,1 +1,16 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --font-inter: 'Inter';
+  --font-press-start: 'PressStart2P-Regular';
+  --font-weight-noraml: 400;
+  --font-weight-bold: 700;
+  --color-main: #000;
+  --color-bg: #fff;
+  --width-clamp: clamp(100%, 80vw, 700px);
+  /*<-----------------------------Card-styles----------------------------->*/
+  --size-card-text-title: 18px;
+  --size-card-text-description: 18px;
+  --size-card-text-button: 14px;
+  --size-card-text-label: 14px;
+  --card-img: url('../images/FoodTruckHtml.png');
+}
