@@ -7,6 +7,21 @@
   --color-main: #000;
   --color-bg: #fff;
   --width-clamp: clamp(100%, 80vw, 700px);
+  --bg-gradient: repeating-linear-gradient(0deg,
+        #d3d3d3 0px,
+        #d3d3d3 2px,
+        transparent 2px,
+        transparent 4px
+    ), repeating-linear-gradient(90deg,
+        #d3d3d3 0px,
+        #d3d3d3 2px,
+        transparent 2px,
+        transparent 4px
+    ), repeating-linear-gradient(180deg,
+        #e7e7e7 0.01%,
+        #e7e7e7 70%,
+        #1a1a1a 30%,
+        #1a1a1a 100%);
   /*<-----------------------------Card-styles----------------------------->*/
   --size-card-text-title: 18px;
   --size-card-text-description: 18px;
