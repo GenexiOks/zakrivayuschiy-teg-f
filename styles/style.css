@@ -223,12 +223,26 @@ section:not(section:last-child) {
 
 /*<-----------------------------Modal----------------------------->*/
 
+.modal-window {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px 42px;
+}
+
 .button-modal {
   padding: 12.5px 132.5px 12.5px 132.5px;
 }
 
 .modal-window__text {
+  width: 198px;
   font-size: var(--font-modal-size);
   font-family: var(--font-press-start);
   font-weight: var(--font-weight-noraml);
+}
+
+.modal-window__text-block {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
