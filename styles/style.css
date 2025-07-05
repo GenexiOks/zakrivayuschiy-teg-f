@@ -226,16 +226,22 @@ section:not(section:last-child) {
 .modal-window {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
   gap: 30px;
-  padding: 30px 42px;
+  width: clamp(341px, 90vw, 353px);
 }
 
 .button-modal {
-  padding: 12.5px 132.5px 12.5px 132.5px;
+  text-align: center;
+  width: 100%;
+  min-height: 38px;
 }
 
 .modal-window__text {
-  width: 198px;
+  line-height: 150%;
   font-size: var(--font-modal-size);
   font-family: var(--font-press-start);
   font-weight: var(--font-weight-noraml);
