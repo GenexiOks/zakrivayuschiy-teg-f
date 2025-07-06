@@ -466,13 +466,11 @@
     </main>
     <dialog class="modal-window" id="modal-window">
       <div class="modal-window__text-block">
-        <svg
-          class="modal-window__floppy-icon floppy-icon"
-          width="39"
-          height="39"
-        >
-          <use href="./svg/icons.svg#floppy"></use>
-        </svg>
+        <div class="modal-window__floppy-icon">
+          <svg class="floppy-icon" width="39" height="39">
+            <use href="./svg/icons.svg#floppy"></use>
+          </svg>
+        </div>
         <p class="modal-window__text">Вставьте дискету, чтобы продолжить</p>
       </div>
       <button
@@ -485,9 +483,9 @@
     <footer class="footer">
       <button
         class="button button-footer button__text"
-        onclick="window['modal-window'].show()"
+        onclick="window['modal-window'].showModal()"
       >
-        <svg class="floppy-icon" width="28" height="28">
+        <svg class="floppy-icon__footer floppy-icon" width="28" height="28">
           <use href="./svg/icons.svg#floppy"></use>
         </svg>
         <span>Сохранить на память</span>
