@@ -55,7 +55,7 @@
   background-color: var(--color-bg);
   outline: none;
   border: 2px solid var(--color-accent);
-  font-family: var(--font-press-start);
+  font-family: var(--font-press-start), sans-serif;
   font-weight: var(--font-weight-noraml);
   font-size: var(--size-card-text-button);
   transition: box-shadow 0.3s ease, scale 0.5s ease-in-out;
@@ -81,18 +81,16 @@
   transform: scaleX(1);
 }
 
+.button:focus-visible {
+  box-shadow: 2px 2px 0 var(--color-accent);
+}
+
 .button > span {
   --color-accent: #fff;
   position: relative;
   z-index: 1;
   color: var(--color-accent);
   mix-blend-mode: difference;
-}
-
-/*<-----------------------------Pseudo-classes----------------------------->*/
-
-.button:focus-visible {
-  box-shadow: 2px 2px 0 var(--color-accent);
 }
 
 /*<-----------------------------Page----------------------------->*/
@@ -115,7 +113,6 @@
 
 .header {
   padding: 100px 0;
-  min-height: 527px;
 }
 
 .header__logo {
@@ -149,19 +146,10 @@
 .main {
   display: flex;
   flex-direction: column;
+  gap: 51px;
 }
 
 /*<-----------------------------Card----------------------------->*/
-
-section:not(section:last-child) {
-  margin-bottom: 49px;
-}
-
-@media (min-width: 1440px) {
-  section:not(section:last-child) {
-    margin-bottom: 48px;
-  }
-}
 
 .card {
   border: 2px solid var(--color-accent);
@@ -170,51 +158,58 @@ section:not(section:last-child) {
 
 .card__title {
   padding: 4px 10px 6px;
-  font-weight: var(--font-weight-bold);
 }
 
 .card__title-text {
   font-size: var(--size-card-text-title);
+  font-weight: var(--font-weight-bold);
+  font-variation-settings: 'wght' var(--font-weight-bold);
 }
 
 .card__img {
-  min-height: 375px;
+  height: 375px;
   background-position: center;
   background-repeat: no-repeat;
+  border-top: 2px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
   object-fit: cover;
   position: relative;
   background-blend-mode: hard-light;
 }
 
-.card__img img {
-  width: 100%;
-}
-
 @media (min-width: 1440px) {
   .card__img {
-    min-height: 696px;
+    height: 698px;
   }
+}
+
+.card__img img {
+  width: 100%;
+  height: 100%;
 }
 
 .card__label {
   position: absolute;
   top: 25px;
   right: 13px;
-  font-family: var(--font-press-start);
+  font-family: var(--font-press-start), sans-serif;
   font-weight: var(--font-weight-noraml);
   font-size: var(--size-card-text-label);
   opacity: 0.5;
-  -webkit-text-stroke: 0.01em var(--card-shdow-color);
+  text-shadow: -1px -1px 0 var(--card-shadow-color),
+    1px -1px 0 var(--card-shadow-color), -1px 1px 0 var(--card-shadow-color),
+    1px 1px 0 var(--card-shadow-color);
 }
 
-@supports (-webkit-text-stroke: 0.01em var(--card-shdow-color)) {
+@supports (
+  (-webkit-text-stroke: 0.03em var(--card-shadow-color)) or
+    (text-stroke: 0.03em var(--card-shadow-color))
+) {
   .card__label {
-    -webkit-text-shadow: -1px -1px 0 var(--card-shdow-color),
-      1px -1px 0 var(--card-shdow-color), -1px 1px 0 var(--card-shdow-color),
-      1px 1px 0 var(--card-shdow-color);
-    text-shadow: -1px -1px 0 var(--card-shdow-color),
-      1px -1px 0 var(--card-shdow-color), -1px 1px 0 var(--card-shdow-color),
-      1px 1px 0 var(--card-shdow-color);
+    text-shadow: none;
+
+    -webkit-text-stroke: 0.03em var(--card-shadow-color);
+    text-stroke: 0.03em var(--card-shadow-color);
   }
 }
 
@@ -229,7 +224,7 @@ section:not(section:last-child) {
 @media (min-width: 1440px) {
   .card__footer {
     padding: 27px 25px 25px 25px;
-    gap: 22px;
+    gap: 23px;
   }
 }
 
@@ -254,8 +249,8 @@ section:not(section:last-child) {
 }
 
 .card__like-button {
-  width: 118px;
-  height: 31px;
+  width: 130px;
+  height: 38px;
   outline: none;
 }
 
@@ -266,6 +261,7 @@ section:not(section:last-child) {
   outline: none;
   background-color: var(--color-bg);
   transition: box-shadow 0.3s ease;
+  height: 34px;
 }
 
 .card__icon-button:focus-visible {
@@ -339,21 +335,15 @@ section:not(section:last-child) {
   animation: scale 0.1s 0.3s ease-in;
 }
 
-/*<-----------------------------Footer----------------------------->*/
+/*<-----------------------------Save-on-disk----------------------------->*/
 
-.footer {
+.save-on-disk {
   display: flex;
   justify-content: center;
-  padding: 46px 31px 100px 31px;
+  padding-bottom: 103px;
 }
 
-@media (min-width: 375px) {
-  .footer {
-    padding: 50px 31px 100px 31px;
-  }
-}
-
-.button-footer {
+.save-on-disk__button {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -362,14 +352,19 @@ section:not(section:last-child) {
 }
 
 @media (min-width: 1440px) {
-  .button-footer {
+  .save-on-disk__button {
     flex-direction: row;
     padding: 16px;
   }
 }
 
+.save-on-disk__floppy-icon {
+  fill: white;
+  mix-blend-mode: difference;
+}
+
 @media (min-width: 1440px) {
-  .floppy-icon__footer {
+  .save-on-disk__floppy-icon {
     margin-bottom: 0;
     margin-right: 3.5px;
     width: 21px;
@@ -377,41 +372,32 @@ section:not(section:last-child) {
   }
 }
 
-.floppy-icon__footer {
-  fill: white;
-  mix-blend-mode: difference;
-}
-
-.floppy-icon__footer:focus {
+.save-on-disk__floppy-icon:focus {
   outline: none;
 }
 
-.floppy-icon__footer:focus-visible {
+.save-on-disk__floppy-icon:focus-visible {
   outline: 2px solid var(--color-accent);
 }
 
 /*<-----------------------------Modal----------------------------->*/
 
 .modal-window:is([open]) {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  align-items: center;
-  position: fixed;
-  inset: 0;
   width: clamp(341px, 90vw, 353px);
   padding: 30px 42px;
-}
-
-dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.7);
-  backdrop-filter: blur(7px);
 }
 
 @media (min-width: 1440px) {
   .modal-window:is([open]) {
     padding: 30px 30px;
   }
+}
+
+.modal-window__form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
 }
 
 .modal-window__text-block {
@@ -422,15 +408,19 @@ dialog::backdrop {
   gap: 19px;
 }
 
+.modal-window__text {
+  line-height: 150%;
+  text-transform: uppercase;
+  font-size: var(--font-modal-size);
+  font-family: var(--font-press-start), sans-serif;
+  font-weight: var(--font-weight-noraml);
+}
+
 .button-modal {
   width: 100%;
   min-height: 38px;
 }
 
-.modal-window__text {
-  line-height: 150%;
-  text-transform: uppercase;
-  font-size: var(--font-modal-size);
-  font-family: var(--font-press-start);
-  font-weight: var(--font-weight-noraml);
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
 }
