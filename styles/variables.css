@@ -4,7 +4,7 @@
   --font-press-start: 'PressStart2P-Regular';
   --font-weight-noraml: 400;
   --font-weight-bold: 700;
-  --color-main: #000;
+  --color-accent: #000;
   --color-bg: #fff;
   --width-clamp: clamp(100%, 80vw, 700px);
   --bg-gradient: repeating-linear-gradient(
@@ -32,9 +32,14 @@
   --size-card-text-description: 18px;
   --size-card-text-button: 14px;
   --size-card-text-label: 14px;
-  --card-img: url('../images/FoodTruckHtml.png');
   --card-shdow-color: #fff;
 
   /*<-----------------------------Modal-styles----------------------------->*/
   --font-modal-size: 14px;
+
+  /*<-----------------------------Svg-s----------------------------->*/
+  --svg-contour-color: #000;
+  --svg-core-color: #000;
+  --animation-fill-color: transparent;
+  --contour-color: #ff0000;
 }
